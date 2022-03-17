@@ -17,13 +17,15 @@ public class UserApiController {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping("/api/user")
+	@PostMapping("/auth/joinProc")
 	public ResponseDto<Integer> save(@RequestBody User user) {
 		
 		System.out.println("userApiController호출");
-		user.setRole(RoleType.USER);
-		int result = userService.회원가입(user);
-		return new ResponseDto<Integer>(HttpStatus.OK,result);
+		
+	
+		userService.회원가입(user);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}
-
+	
+	
 }
