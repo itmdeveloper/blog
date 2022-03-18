@@ -26,4 +26,5 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
       
-
+cos:
+  key: cos1234
